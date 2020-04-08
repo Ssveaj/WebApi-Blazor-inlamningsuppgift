@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webapia", "Webapia\Webapia.csproj", "{D4E36385-7988-4944-B4E5-743154AA9C21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Webapia", "Webapia\Webapia.csproj", "{D4E36385-7988-4944-B4E5-743154AA9C21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor", "Blazor\Blazor.csproj", "{CA53A12A-594B-410D-BC0F-D3E003D07F08}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp", "BlazorApp\BlazorApp.csproj", "{9605D675-8BF6-477F-8DB8-9FA60DBABCE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{D4E36385-7988-4944-B4E5-743154AA9C21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4E36385-7988-4944-B4E5-743154AA9C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4E36385-7988-4944-B4E5-743154AA9C21}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA53A12A-594B-410D-BC0F-D3E003D07F08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA53A12A-594B-410D-BC0F-D3E003D07F08}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA53A12A-594B-410D-BC0F-D3E003D07F08}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA53A12A-594B-410D-BC0F-D3E003D07F08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9605D675-8BF6-477F-8DB8-9FA60DBABCE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9605D675-8BF6-477F-8DB8-9FA60DBABCE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9605D675-8BF6-477F-8DB8-9FA60DBABCE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9605D675-8BF6-477F-8DB8-9FA60DBABCE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
