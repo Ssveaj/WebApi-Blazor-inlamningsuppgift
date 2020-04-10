@@ -1,0 +1,119 @@
+﻿@page "/customercases"
+@using Blazor.Models.CustomerCase
+@inject HttpClient http 
+
+
+<div class="container">
+    <div class="text-right">
+        <button type="submit" class="btn btn-danger" @onclick="DeleteAllCustomerCases"></button>
+    </div>
+    <EditForm class="my-5" Model="@customercase" OnSubmit="@CreateCustomerCase">
+        <h5 class="mb-3">Create A CustomerCase</h5>
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Title..." @bind="customercase.Title" />
+                </div>
+                <div class="row">
+                    <input type="text" class="form-control" placeholder="Title..." @bind="customercase.Description" />
+                </div>
+                <div class="row">
+                    <input type="text" class="form-control" placeholder="Title..." @bind="customercase.Created" />
+                </div>
+                <div class="row">
+                    <InputSelect Id="Status" @bind-Value="customercase.Status" Class="form-control">
+                    <option value="">- Status -</option>
+                    <option value="Active">Active</option>
+                    <option value="UnActive">UnActive</option>
+                    <option value="Finish">Finish</option>
+                    </InputSelect>
+                </div>
+            </div>
+        </div>
+    </EditForm>
+
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">#customerId</th>
+                <th scope="col">#userId</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Created</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        @if (customercases != null)
+        {
+            <tbody>
+                @foreach (var customercase in customercases)
+                {
+                    <tr>
+                        <th scope="row">@customercase.Id</th>
+                        <th scope="row">@customercase.customerId</th>
+                        <th scope="row">@customercase.userId</th>
+                        <th scope="row">@customercase.Title</th>
+                        <th scope="row">@customercase.Description</th>
+                        <th scope="row">@customercase.Created</th>
+                        <th scope="row">@customercase.Status</th>
+                        <td class="text-center">
+                            <span style="cursor: pointer" class="oi oi-trash" @onclick="() => DeleteCustomerCase(customercase.Id)"></span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        }
+    </table>
+
+</div>
+
+@code {
+
+    private List<CustomercaseModel> customercases;
+    private CustomercaseCreateModel customercase;
+
+    public async Task GetCustomerCases()
+    {
+        customercases = await http.GetJsonAsync<List<CustomercaseModel>>("http://localhost:57277/api/customercases");
+        StateHasChanged();
+    }
+    private async Task CreateCustomerCase()
+    {
+        await http.PostJsonAsync<CustomercaseCreateModel>("http://localhost:57277/api/customercases", customercase);
+
+        customercase = new CustomercaseCreateModel();
+        await GetCustomerCases();
+    }
+    private async Task DeleteAllCustomerCases()
+    {
+        await http.DeleteAsync("http://localhost:57277/api/customercases/all");
+        await GetCustomerCases();
+    }
+    private async Task DeleteCustomerCase(int id)
+    {
+        await http.DeleteAsync($"http://localhost:57277/api/customers/{id}");
+        await GetCustomerCases();
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        customercase = new CustomercaseCreateModel();
+        await GetCustomerCases();
+    }
+}
+
+
+*/
+
+
+Jag är inte klar med customercase.
+Än så länge har jag byggt upp funktioner, jag har inte hunnit labba med hur det fungerar med att använda id, customerid, userid med hjälp av
+table classen och det har inte fungerat. (Har inte hunnit kolla varför, kanske inte nödvändigt att ha dessa)
+ Lägg mycket fokus på HTML koden i denna kompoenter. 
+
+
+
+
+
+/*
+
