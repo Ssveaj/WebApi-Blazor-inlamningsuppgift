@@ -24,7 +24,7 @@ namespace WebApi.Controllers
 
         // GET: api/CustomerCases
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CustomerCase>>> GetCustomerCase()
+        public async Task<ActionResult<IEnumerable<CustomerCase>>> GetCustomerCases()
         {
             return await _context.CustomerCase.Include(c => c.Customer).Include(c => c.User).ToListAsync();
         }
@@ -100,6 +100,17 @@ namespace WebApi.Controllers
             await _context.SaveChangesAsync();
 
             return customerCase;
+        }
+        [HttpDelete("all")]
+        public async Task<ActionResult> DeleteAllCustomerCases()
+        {
+            foreach (var c in _context.CustomerCase)
+            {
+                _context.CustomerCase.Remove(c);
+            }
+
+            await _context.SaveChangesAsync();
+            return Ok();
         }
 
         private bool CustomerCaseExists(int id)

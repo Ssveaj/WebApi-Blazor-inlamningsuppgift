@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Webapia", "Webapia\Webapia.csproj", "{D4E36385-7988-4944-B4E5-743154AA9C21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor", "Blazor\Blazor.csproj", "{14F5314D-4753-48F8-A4DA-3CB70F94B01B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor", "Blazor\Blazor.csproj", "{14F5314D-4753-48F8-A4DA-3CB70F94B01B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
