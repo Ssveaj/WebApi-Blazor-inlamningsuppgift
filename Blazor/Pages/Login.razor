@@ -1,12 +1,14 @@
 ﻿@page "/login"
 @layout AuthorizeLayout
-@using BlazorApp.Models
-@using BlazorApp.Services
+@using Blazor.Models
+@using Blazor.Services
 
 @inject Blazored.SessionStorage.ISessionStorageService SessionStorage
 @inject IAuthService AuthService
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
+
+
 <!-- Default form login -->
 <EditForm Model="@loginModel" OnValidSubmit="onLoginSubmit" class="text-center">
     <DataAnnotationsValidator />
@@ -50,33 +52,31 @@
     {
         loginModel = new LoginModel()
         {
-            Email = "hans@ml.com",
-            Password = "BytMig123"
+            Email = "joel@ferm.com",
+            Password = "Bytmig123"
         };
 
         return base.OnInitializedAsync();
     }
-
-
     private async Task<bool> onLoginSubmit()
     {
         var response = await AuthService.LoginAsync(loginModel);
 
-
         if (response.Token != null)
         {
+
             LoginErrorMessage = string.Empty;
 
             await ((AuthStateProvider)AuthenticationStateProvider).Authenticated(response);
             NavigationManager.NavigateTo("/");
-
         }
         else
         {
-            LoginErrorMessage = "Incorrect email address or password";
+            LoginErrorMessage = "Incorrect Email Address Or Password";
         }
-
         return await Task.FromResult(true);
 
     }
+
+
 }

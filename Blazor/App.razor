@@ -4,7 +4,8 @@
             <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
         </Found>
         <NotFound>
-            <LayoutView Layout="@typeof(MainLayout)">
+            <LayoutView Layout="@typeof(Error404Layout)">
+                <h1>Filo Not Found</h1>
                 <p>Sorry, there's nothing at this address.</p>
             </LayoutView>
         </NotFound>
