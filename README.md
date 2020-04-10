@@ -6,13 +6,16 @@ Du ska i denna inlämningsuppgift bygga ett enkelt ärendehanteringssystem. Om d
  
 
 För godkänt krävs det att du gör följande:
+
 Du ska bygga ett grafiskt gränssnitt med Blazor/MVC där du kan skapa ett ärende som tar emot följande information: Kundens namn, Tidpunkt för ärendet, Titel på ärendet, En beskrivning av ärendet, En status (Ej påbörjad, Påbörjad, Avslutad).
 Du ska skapa ett grafiskt gränssnitt med Blazor/MVC där du kan lista upp alla ärenden och se all information om ett ärende.
 Du ska bygga ett grafiskt gränssnitt med Blazor/MVC där du kan skapa en kund och lista upp alla kunder i en lista.
 Du måste minst ha 2 controllers i ditt WebAPI en för kunder och en för ärenden (CustomerController, CaseController)
 Du måste ha CRUD för minst 2 controllers (dvs. CustomerController och CaseController)
 Du måste kunna spara informationen i en databas med hjälp av Entity Framework
+
 För väl godkänt krävs det att du även har följande:
+
 Inloggning mot WebApi med JWT-tokens för handläggaren
 Ett grafiskt gränssnitt i Blazor/MVC för registring och inloggning av en handläggare kopplat på WebApiet en kund ska alltså inte logga in utan det är bara en handläggare som ska logga in. (använd gärna LocalStorage för Blazor).
 VG delen ska göras självständigt, vilket innebär att du själv ska klara av att göra detta med minimal handledning av utbildaren. 
