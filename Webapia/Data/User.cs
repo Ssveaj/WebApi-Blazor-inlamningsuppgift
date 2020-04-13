@@ -5,11 +5,6 @@ namespace Webapia.Data
 {
     public partial class User
     {
-        public User()
-        {
-            CustomerCase = new HashSet<CustomerCase>();
-        }
-
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -17,7 +12,5 @@ namespace Webapia.Data
         public string Role { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
-
-        public virtual ICollection<CustomerCase> CustomerCase { get; set; }
     }
 }
