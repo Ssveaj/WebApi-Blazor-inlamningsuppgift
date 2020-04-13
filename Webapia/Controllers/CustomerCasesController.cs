@@ -8,9 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Webapia.Data;
 
-namespace WebApi.Controllers
+namespace Webapia.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CustomerCasesController : ControllerBase
@@ -26,7 +25,7 @@ namespace WebApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CustomerCase>>> GetCustomerCases()
         {
-            return await _context.CustomerCase.Include(c => c.Customer).Include(c => c.User).ToListAsync();
+            return await _context.CustomerCase.ToListAsync();
         }
 
         // GET: api/CustomerCases/5
@@ -75,11 +74,12 @@ namespace WebApi.Controllers
             return NoContent();
         }
 
+        // POST: api/CustomerCases
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
         public async Task<ActionResult<CustomerCase>> PostCustomerCase(CustomerCase customerCase)
         {
-            customerCase.Created = DateTime.Now;
-
             _context.CustomerCase.Add(customerCase);
             await _context.SaveChangesAsync();
 

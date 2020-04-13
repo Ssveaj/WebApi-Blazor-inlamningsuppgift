@@ -5,6 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200413092632_inita.cs" />
+    <Compile Remove="Migrations\20200413092632_inita.Designer.cs" />
+    <Compile Remove="Migrations\20200413100045_FixCustomerCase.cs" />
+    <Compile Remove="Migrations\20200413100045_FixCustomerCase.Designer.cs" />
+    <Compile Remove="Migrations\20200413113747_FixCustomerCase.cs" />
+    <Compile Remove="Migrations\20200413113747_FixCustomerCase.Designer.cs" />
+    <Compile Remove="Migrations\20200413120304_fixCustomerCase.cs" />
+    <Compile Remove="Migrations\20200413120304_fixCustomerCase.Designer.cs" />
+    <Compile Remove="Migrations\20200413121443_FIXED.cs" />
+    <Compile Remove="Migrations\20200413121443_FIXED.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.HttpClient" Version="3.2.0-preview2.20160.5" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.3" />

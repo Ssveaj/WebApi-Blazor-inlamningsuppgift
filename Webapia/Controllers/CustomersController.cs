@@ -10,6 +10,7 @@ using Webapia.Data;
 
 namespace WebApi.Controllers
 {
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CustomersController : ControllerBase
@@ -20,21 +21,19 @@ namespace WebApi.Controllers
         {
             _context = context;
         }
-
         // GET: api/Customers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
         {
             return await _context.Customer.ToListAsync();
         }
-
         // GET: api/Customers/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Customer>> GetCustomer(int id)
         {
             var customer = await _context.Customer.FindAsync(id);
 
-            if (customer == null)
+           if (customer == null)
             {
                 return NotFound();
             }
@@ -87,6 +86,7 @@ namespace WebApi.Controllers
         }
 
         // DELETE: api/Customers/5
+        //[Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Customer>> DeleteCustomer(int id)
         {
@@ -101,6 +101,7 @@ namespace WebApi.Controllers
 
             return customer;
         }
+      //  [Authorize(Roles ="admin, Admin")]
         [HttpDelete("all")]
         public async Task<ActionResult> DeleteAllCustomers()
         {

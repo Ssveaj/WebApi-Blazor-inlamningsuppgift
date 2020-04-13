@@ -15,7 +15,10 @@
         <div class="form-group">
             <div class="row">
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Firstname..." @bind="customer.Name" />
+                    <input type="text" class="form-control" placeholder="Name..." @bind="customer.Name" />
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Title..." @bind="customer.Title" />
                 </div>
                 <div class="col">
                     <input type="text" class="form-control" placeholder="Mail..." @bind="customer.Email" />
@@ -31,6 +34,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
+                <th scope="col">Title</th>
                 <th scope="col" colspan="2">Mail</th>
             </tr>
         </thead>
@@ -39,14 +43,15 @@
             <tbody>
                 @foreach (var customer in customers)
                 {
-                    <tr>
-                        <th scope="row">@customer.Id</th>
-                        <th scope="row">@customer.Name</th>
-                        <th scope="row">@customer.Email</th>
-                        <td class="text-center">
-                            <span style="cursor: pointer" class="oi oi-trash" @onclick="() => DeleteCustomer(customer.Id)"></span>
-                        </td>
-                    </tr>
+                <tr>
+                    <th scope="row">@customer.Id</th>
+                    <th scope="row">@customer.Name</th>
+                    <th scope="row">@customer.Title</th>
+                    <th scope="row">@customer.Email</th>
+                    <td class="text-center">
+                        <span style="cursor: pointer" class="oi oi-trash" @onclick="() => DeleteCustomer(customer.Id)"></span>
+                    </td>
+                </tr>
                 }
             </tbody>
         }

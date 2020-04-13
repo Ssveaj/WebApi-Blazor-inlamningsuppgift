@@ -9,9 +9,9 @@
 
 <div class="main">
     <div class="top-row px-4">
-        <AuthorizeView Roles="Admin">
+        <AuthorizeView>
             <Authorized>
-                <span class="mr-1">@context.User.Identity.Name</span><button class="btn btn-primary" @onclick="Logout">Logga ut</button>
+                <span class="mr-1"> Welcome! - @context.User.Identity.Name</span><button class="btn btn-primary" @onclick="Logout">Logga ut</button>
             </Authorized>
             <NotAuthorized>
                 <a class="btn btn-primary" href="/login">Logga in</a>

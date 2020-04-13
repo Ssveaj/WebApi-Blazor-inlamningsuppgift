@@ -38,8 +38,6 @@ namespace Webapia.Data
 
             modelBuilder.Entity<CustomerCase>(entity =>
             {
-                entity.Property(e => e.Created).HasColumnType("datetime");
-
                 entity.Property(e => e.Description).IsRequired();
 
                 entity.Property(e => e.Status)
@@ -50,17 +48,7 @@ namespace Webapia.Data
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.HasOne(d => d.Customer)
-                    .WithMany(p => p.CustomerCase)
-                    .HasForeignKey(d => d.CustomerId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__CustomerC__Custo__276EDEB3");
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.CustomerCase)
-                    .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__CustomerC__UserI__286302EC");
+                
             });
 
             modelBuilder.Entity<User>(entity =>
